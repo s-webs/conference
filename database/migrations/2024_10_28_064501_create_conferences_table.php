@@ -31,6 +31,7 @@ return new class extends Migration {
             $table->longText('abstracts_file')->nullable();
             $table->longText('program_file')->nullable();
             //
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
