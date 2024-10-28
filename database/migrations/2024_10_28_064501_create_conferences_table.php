@@ -30,6 +30,7 @@ return new class extends Migration {
             // FILES
             $table->longText('abstracts_file')->nullable();
             $table->longText('program_file')->nullable();
+            $table->longText('info_letter')->nullable();
             //
             $table->boolean('is_active')->default(true);
             $table->timestamps();
