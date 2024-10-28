@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use App\MoonShine\Resources\ConferenceResource;
+use App\MoonShine\Resources\OrganizingCommitteeMemberResource;
+use App\MoonShine\Resources\SpeakerResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -23,7 +25,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
      */
     protected function resources(): array
     {
-        return [];
+        return [
+            new SpeakerResource(),
+            new OrganizingCommitteeMemberResource(),
+        ];
     }
 
     /**
