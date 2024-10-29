@@ -125,15 +125,18 @@ class ConferenceResource extends ModelResource
                     ])->columnSpan(6),
                 ]),
             ]),
-            HasMany::make('Члены организационного комитета', 'organizingCommitteeMembers', resource: new OrganizingCommitteeMemberResource())
+            HasMany::make('', 'organizingCommitteeMembers', resource: new OrganizingCommitteeMemberResource())
                 ->creatable()
                 ->hideOnIndex(),
-            HasMany::make('Спикеры', 'speakers', resource: new SpeakerResource())
+            HasMany::make('', 'speakers', resource: new SpeakerResource())
                 ->creatable()
                 ->hideOnIndex(),
-            HasMany::make('Спонсоры', 'sponsors', resource: new SponsorResource())
+            HasMany::make('', 'sponsors', resource: new SponsorResource())
                 ->creatable()
                 ->hideOnIndex(),
+            HasMany::make('', 'gallery', resource: new GalleryResource())
+                ->creatable()
+                ->hideOnIndex()
         ];
     }
 

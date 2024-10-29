@@ -20,4 +20,9 @@ class Conference extends Model
     {
         return $this->hasMany(Sponsor::class);
     }
+
+    public function gallery(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Gallery::class);
+    }
 }

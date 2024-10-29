@@ -23,17 +23,22 @@ class ConferenceFormPage extends FormPage
         $speakersComponent = collect($bottomComponents)->filter(fn($component) => $component->getName() === 'speakers')->first();
         $organizingCommitteeComponent = collect($bottomComponents)->filter(fn($component) => $component->getName() === 'organizingCommitteeMembers')->first();
         $sponsorsComponent = collect($bottomComponents)->filter(fn($component) => $component->getName() === 'sponsors')->first();
+        $galleryComponent = collect($bottomComponents)->filter(fn($component) => $component->getName() === 'gallery')->first();
 
         $tabLayer = [
             Block::make('', [
                 Tabs::make([
                     Tab::make('Основная информация', $this->mainLayer()),
 
+                    Tab::make('Галерея', [$galleryComponent]),
+
                     Tab::make('Спикеры', [$speakersComponent]),
 
                     Tab::make('Организационный комитет', [$organizingCommitteeComponent]),
 
-                    Tab::make('Спонсоры', [$sponsorsComponent])
+                    Tab::make('Спонсоры', [$sponsorsComponent]),
+
+
                 ])
             ])
         ];
