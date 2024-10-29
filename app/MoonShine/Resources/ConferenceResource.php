@@ -126,9 +126,14 @@ class ConferenceResource extends ModelResource
                 ]),
             ]),
             HasMany::make('Члены организационного комитета', 'organizingCommitteeMembers', resource: new OrganizingCommitteeMemberResource())
-                ->creatable(),
+                ->creatable()
+                ->hideOnIndex(),
             HasMany::make('Спикеры', 'speakers', resource: new SpeakerResource())
                 ->creatable()
+                ->hideOnIndex(),
+            HasMany::make('Спонсоры', 'sponsors', resource: new SponsorResource())
+                ->creatable()
+                ->hideOnIndex(),
         ];
     }
 

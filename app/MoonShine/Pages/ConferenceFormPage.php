@@ -22,6 +22,7 @@ class ConferenceFormPage extends FormPage
 
         $speakersComponent = collect($bottomComponents)->filter(fn($component) => $component->getName() === 'speakers')->first();
         $organizingCommitteeComponent = collect($bottomComponents)->filter(fn($component) => $component->getName() === 'organizingCommitteeMembers')->first();
+        $sponsorsComponent = collect($bottomComponents)->filter(fn($component) => $component->getName() === 'sponsors')->first();
 
         $tabLayer = [
             Block::make('', [
@@ -30,7 +31,9 @@ class ConferenceFormPage extends FormPage
 
                     Tab::make('Спикеры', [$speakersComponent]),
 
-                    Tab::make('Организационный комитет', [$organizingCommitteeComponent])
+                    Tab::make('Организационный комитет', [$organizingCommitteeComponent]),
+
+                    Tab::make('Спонсоры', [$sponsorsComponent])
                 ])
             ])
         ];

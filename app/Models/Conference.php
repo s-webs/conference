@@ -15,4 +15,9 @@ class Conference extends Model
     {
         return $this->hasMany(OrganizingCommitteeMember::class);
     }
+
+    public function sponsors(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Sponsor::class);
+    }
 }
