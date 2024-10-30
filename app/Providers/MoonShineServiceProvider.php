@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\MoonShine\Resources\ArticleResource;
 use App\MoonShine\Resources\ConferenceResource;
 use App\MoonShine\Resources\GalleryResource;
 use App\MoonShine\Resources\OrganizingCommitteeMemberResource;
@@ -31,7 +32,8 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             new SpeakerResource(),
             new OrganizingCommitteeMemberResource(),
             new SponsorResource(),
-            new GalleryResource()
+            new GalleryResource(),
+            new ArticleResource()
         ];
     }
 

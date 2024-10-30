@@ -7,7 +7,6 @@ namespace App\MoonShine\Resources;
 use App\MoonShine\Pages\ConferenceFormPage;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Conference;
-
 use MoonShine\Decorations\Collapse;
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Grid;
@@ -17,14 +16,11 @@ use MoonShine\Decorations\Tabs;
 use MoonShine\Fields\Date;
 use MoonShine\Fields\File;
 use MoonShine\Fields\Image;
-use MoonShine\Fields\Relationships\BelongsTo;
-use MoonShine\Fields\Relationships\BelongsToMany;
 use MoonShine\Fields\Relationships\HasMany;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\TinyMce;
 use MoonShine\Pages\Crud\DetailPage;
-use MoonShine\Pages\Crud\FormPage;
 use MoonShine\Pages\Crud\IndexPage;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
@@ -136,7 +132,11 @@ class ConferenceResource extends ModelResource
                 ->hideOnIndex(),
             HasMany::make('', 'gallery', resource: new GalleryResource())
                 ->creatable()
-                ->hideOnIndex()
+                ->hideOnIndex(),
+            HasMany::make('', 'articles', resource: new ArticleResource())
+                ->creatable()
+                ->withoutModals()
+                ->hideOnIndex(),
         ];
     }
 
