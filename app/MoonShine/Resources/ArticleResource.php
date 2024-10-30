@@ -39,29 +39,33 @@ class ArticleResource extends ModelResource
             Block::make([
                 ID::make()->sortable(),
                 BelongsTo::make('conference')
-                    ->hideOnAll(),
+                    ->hideOnIndex(),
                 Tabs::make([
                     Tab::make('RU', [
                         Text::make('Название', 'title_ru'),
-                        TinyMce::make('Контент', 'text_ru'),
+                        TinyMce::make('Контент', 'text_ru')->hideOnIndex(),
                     ]),
                     Tab::make('KZ', [
-                        Text::make('Название', 'title_kz'),
-                        TinyMce::make('Контент', 'text_kz'),
+                        Text::make('Название', 'title_kz')->hideOnIndex(),
+                        TinyMce::make('Контент', 'text_kz')->hideOnIndex(),
                     ]),
                     Tab::make('EN', [
-                        Text::make('Название', 'title_en'),
-                        TinyMce::make('Контент', 'text_en'),
+                        Text::make('Название', 'title_en')->hideOnIndex(),
+                        TinyMce::make('Контент', 'text_en')->hideOnIndex(),
                     ]),
                 ]),
                 Image::make('Превью', 'preview')
                     ->disk('public')
-                    ->dir('conferences/articles')
+                    ->dir('conferences/articles/preview')
+                    ->removable(),
+                Image::make('Галерея', 'gallery')
+                    ->disk('public')
+                    ->dir('conferences/articles/gallery')
+                    ->multiple()
                     ->removable(),
                 Text::make('Автор', 'author'),
                 Date::make('Дата', 'date'),
-                Slug::make('Slug')->from('title_en')
-                    ->hideOnForm(),
+                Slug::make('Slug')->from('title_en'),
             ]),
         ];
     }

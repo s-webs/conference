@@ -135,7 +135,7 @@ class ConferenceResource extends ModelResource
                 ->hideOnIndex(),
             HasMany::make('', 'articles', resource: new ArticleResource())
                 ->creatable()
-                ->withoutModals()
+//                ->withoutModals()
                 ->hideOnIndex(),
         ];
     }

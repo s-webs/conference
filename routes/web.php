@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
+Route::get('/conference-details/{conferenceId}', [\App\Http\Controllers\ConferenceController::class, 'about'])->name('conference.about');
+Route::get('/conference-news/{articleSlug}', [\App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');

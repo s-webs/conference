@@ -25,6 +25,7 @@ return new class extends Migration {
             //
             $table->date('date');
             //
+            $table->json('gallery')->nullable();
             $table->string('slug')->unique();
             $table->integer('views')->default(0);
             $table->string('author')->nullable();
