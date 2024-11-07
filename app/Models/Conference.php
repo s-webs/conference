@@ -30,4 +30,11 @@ class Conference extends Model
     {
         return $this->hasMany(Article::class);
     }
+
+    public function allPhotos()
+    {
+        return $this->gallery->flatMap(function ($gallery) {
+            return $gallery->images;
+        })->all();
+    }
 }

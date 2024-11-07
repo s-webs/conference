@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/assets/css/slick.css" type="text/css" media="all">
     <link rel="stylesheet" href="/assets/css/simple-line-icons.css" type="text/css" media="all">
     @vite('resources/scss/style.scss')
+    @stack('styles')
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -24,33 +25,11 @@
 <body>
 
 <!-- preloader -->
-<div id="preloader">
+<div id="preloader" class="preloader">
     <div class="book">
         <div class="inner">
-            <div class="left"></div>
-            <div class="middle"></div>
-            <div class="right"></div>
+            <img src="/assets/icons/logo-preloader.jpg" alt="logo">
         </div>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
     </div>
 </div>
 
@@ -71,7 +50,7 @@
                             <a class="nav-link" href="/">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">О конференции</a>
+                            @stack('conference-about')
                         </li>
                     </ul>
                 </div>
@@ -162,28 +141,9 @@
     <nav>
         <ul class="vertical-menu">
             <li class="active">
-                <a href="index.html">Home</a>
-                <ul class="submenu">
-                    <li><a href="index.html">Magazine</a></li>
-                    <li><a href="personal.html">Personal</a></li>
-                    <li><a href="personal-alt.html">Personal Alt</a></li>
-                    <li><a href="minimal.html">Minimal</a></li>
-                    <li><a href="classic.html">Classic</a></li>
-                </ul>
+                <a href="/">Главная</a>
             </li>
-            <li><a href="category.html">Lifestyle</a></li>
-            <li><a href="category.html">Inspiration</a></li>
-            <li>
-                <a href="#">Pages</a>
-                <ul class="submenu">
-                    <li><a href="category.html">Category</a></li>
-                    <li><a href="blog-single.html">Blog Single</a></li>
-                    <li><a href="blog-single-alt.html">Blog Single Alt</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
+            @stack('conference-about-mobile')
         </ul>
     </nav>
 
@@ -205,6 +165,6 @@
 <script src="/assets/js/slick.min.js"></script>
 <script src="/assets/js/jquery.sticky-sidebar.min.js"></script>
 <script src="/assets/js/custom.js"></script>
-
+@stack('scripts')
 </body>
 </html>

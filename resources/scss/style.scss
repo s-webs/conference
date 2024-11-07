@@ -40,3 +40,30 @@ Description: Minimal Blog and Magazine HTML Template
 @import "elements";
 @import "slick";
 @import "responsive";
+
+//Градиаент
+//@include linear-gradient(to right, $maincolor 0%, $secondarycolor 51%, $maincolor 100%);
+
+.pswp-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    a {
+        width: 45%;
+        height: 200px;
+
+        @media (min-width: 992px) {
+            width: 200px;
+            height: 150px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+
+        }
+    }
+}

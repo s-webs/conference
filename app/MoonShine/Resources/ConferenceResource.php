@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Conference;
 use MoonShine\Decorations\Collapse;
 use MoonShine\Decorations\Column;
+use MoonShine\Decorations\Flex;
 use MoonShine\Decorations\Grid;
 use MoonShine\Decorations\LineBreak;
 use MoonShine\Decorations\Tab;
@@ -100,7 +101,11 @@ class ConferenceResource extends ModelResource
                             ->hideOnIndex(),
                         Date::make('Дата начала', 'date_start'),
                         Date::make('Дата окончания', 'date_end'),
-                        Switcher::make('Актуально', 'is_active')
+                        Flex::make([
+                            Switcher::make('Актуально', 'is_active'),
+                            Switcher::make('Конференция окончена', 'is_completed'),
+                            Switcher::make('Открыта ли регистрация', 'is_registration_open')
+                        ]),
                     ])->columnSpan(6),
                     Column::make([
                         File::make('Программа конференции', 'program_file')

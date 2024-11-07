@@ -13,4 +13,10 @@ class ConferenceController extends Controller
         return view('pages.conference.about', compact('conference'))
             ->with('conferenceId', $conference->id);
     }
+
+    public function gallery($conferenceId)
+    {
+        $conference = Conference::query()->findOrFail($conferenceId);
+        return view('pages.conference.gallery', compact('conference'));
+    }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Gallery extends Model
 {
     protected $casts = [
-        'images' => 'collection'
+        'images' => 'array'
     ];
 
     public function conference(): \Illuminate\Database\Eloquent\Relations\BelongsTo
