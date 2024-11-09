@@ -8,6 +8,8 @@ use App\MoonShine\Resources\ArticleResource;
 use App\MoonShine\Resources\ConferenceResource;
 use App\MoonShine\Resources\GalleryResource;
 use App\MoonShine\Resources\OrganizingCommitteeMemberResource;
+use App\MoonShine\Resources\RegistrationFieldResource;
+use App\MoonShine\Resources\RegistrationTypeResource;
 use App\MoonShine\Resources\SpeakerResource;
 use App\MoonShine\Resources\SponsorResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
@@ -33,7 +35,9 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             new OrganizingCommitteeMemberResource(),
             new SponsorResource(),
             new GalleryResource(),
-            new ArticleResource()
+            new ArticleResource(),
+            new RegistrationTypeResource(),
+            new RegistrationFieldResource(),
         ];
     }
 

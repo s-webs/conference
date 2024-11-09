@@ -2,7 +2,8 @@
     <div class="widget rounded">
         <div class="widget-header text-center">
             <h3 class="widget-title mb-4">Материалы и регистрация</h3>
-            <a href="/{{ $conference->info_letter }}" class="btn btn-default btn-full" type="submit" target="_blank">Регистрация</a>
+            <a href="{{ route('conference.register', $conference->id) }}" class="btn btn-default btn-full" type="submit"
+               target="_blank">Регистрация</a>
             <img src="/assets/images/wave.svg" class="wave" alt="wave"/>
         </div>
         <div class="widget-content">
@@ -14,7 +15,8 @@
                 <a href="/{{ $conference->abstracts_file }}" class="btn btn-default btn-full mt-2" type="submit"
                    target="_blank">Сборник тезисов</a>
             @endif
-            <a href="{{ route('conference.gallery', $conference->id) }}" class="btn btn-default btn-full mt-2" type="submit"
+            <a href="{{ route('conference.gallery', $conference->id) }}" class="btn btn-default btn-full mt-2"
+               type="submit"
                target="_blank">Галерея</a>
         </div>
     </div>

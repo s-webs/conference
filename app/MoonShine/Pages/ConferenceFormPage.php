@@ -25,6 +25,7 @@ class ConferenceFormPage extends FormPage
         $sponsorsComponent = collect($bottomComponents)->filter(fn($component) => $component->getName() === 'sponsors')->first();
         $galleryComponent = collect($bottomComponents)->filter(fn($component) => $component->getName() === 'gallery')->first();
         $articlesComponent = collect($bottomComponents)->filter(fn($component) => $component->getName() === 'articles')->first();
+        $registrationTypesComponent = collect($bottomComponents)->filter(fn($component) => $component->getName() === 'registrationTypes')->first();
 
         $tabLayer = [
             Block::make('', [
@@ -40,6 +41,8 @@ class ConferenceFormPage extends FormPage
                     Tab::make('Спонсоры', [$sponsorsComponent]),
 
                     Tab::make('Новостные материалы', [$articlesComponent]),
+
+                    Tab::make('Типы регистрации', [$registrationTypesComponent]),
                 ])
             ])
         ];

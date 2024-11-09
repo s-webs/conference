@@ -37,4 +37,9 @@ class Conference extends Model
             return $gallery->images;
         })->all();
     }
+
+    public function registrationTypes(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(RegistrationType::class);
+    }
 }

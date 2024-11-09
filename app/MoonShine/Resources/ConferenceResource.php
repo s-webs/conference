@@ -142,6 +142,10 @@ class ConferenceResource extends ModelResource
                 ->creatable()
 //                ->withoutModals()
                 ->hideOnIndex(),
+            HasMany::make('', 'registrationTypes', resource: new RegistrationTypeResource())
+                ->creatable()
+                ->withoutModals()
+                ->hideOnIndex()
         ];
     }
 
