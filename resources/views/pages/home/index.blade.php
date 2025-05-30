@@ -37,22 +37,22 @@
                         </div>
                         <div class="row">
                             @foreach($conference->speakers as $speaker)
-                                <div class="col-sm-4">
+                                <div class="col-sm-6">
                                     <!-- post -->
                                     <div class="post post-grid rounded bordered">
                                         <div class="thumb top-rounded">
                                             <div class="inner">
                                                 <img src="/{{ $speaker->photo }}" alt="post-title"
-                                                     style="height: 180px; width: 100%; object-fit: cover">
+                                                     style="height: 210px; width: 100%; object-fit: cover">
                                             </div>
                                         </div>
                                         <div class="details">
-                                            <h5 class="post-title mb-3 mt-3" style="font-size: 0.9rem; height: 60px;">
+                                            <h5 class="post-title mb-3 mt-3" style="font-size: 0.9rem;">
                                                 {{ $speaker->name }}
                                             </h5>
                                             <ul class="meta list-inline mb-0">
                                                 <li class="list-inline-item"
-                                                    style="font-size: 0.7rem; height: 55px;">{{ $speaker->position }}</li>
+                                                    style="font-size: 1rem; height: 55px;">{{ $speaker->position }}</li>
                                             </ul>
                                         </div>
                                     </div>

@@ -21,13 +21,13 @@
         </div>
     </div>
 
-    @include('components.last_conferencies')
+{{--    @include('components.last_conferencies')--}}
 
-    @include('components.newsletter')
+{{--    @include('components.newsletter')--}}
 
     <div class="widget no-container rounded text-md-center">
         <span class="sponsors-title">- Спонсоры -</span>
-        <div style="display: flex; justify-content: center; align-items: center">
+        <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap">
             @foreach($conference->sponsors as $sponsor)
                 <a href="{{ $sponsor->link }}" class="widget-sponsors" target="_blank">
                     <img src="/{{ $sponsor->logo }}" alt="Advertisement" style="height: 60px; margin: 10px;">

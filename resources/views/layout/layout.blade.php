@@ -93,9 +93,9 @@
                     <!-- social icons -->
                     <div class="col-md-4 text-center">
                         <ul class="social-icons list-unstyled list-inline mb-0">
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.facebook.com/ukma.kz"><i class="fab fa-facebook-f"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.instagram.com/medacadem_skma/"><i class="fab fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.youtube.com/@skma-edu-kz"><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
 
@@ -134,7 +134,7 @@
 
     <!-- logo -->
     <div class="logo">
-        <img src="/assets/images/logo.svg" alt="Katen"/>
+        <img src="/assets/icons/logo.svg" alt="logo" />
     </div>
 
     <!-- menu -->
