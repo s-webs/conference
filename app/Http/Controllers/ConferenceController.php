@@ -122,10 +122,10 @@ class ConferenceController extends Controller
             $participant->email_verified_at = now();
             $participant->save();
 
-            return redirect()->route('home')->with('success', 'Ваш email успешно подтвержден!');
+            return redirect()->route('home.index')->with('success', 'Ваш email успешно подтвержден!');
         }
 
-        return redirect()->route('home')->with('info', 'Ваш email уже был подтвержден.');
+        return redirect()->route('home.index')->with('info', 'Ваш email уже был подтвержден.');
     }
 
 }
