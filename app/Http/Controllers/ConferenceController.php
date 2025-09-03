@@ -54,9 +54,7 @@ class ConferenceController extends Controller
             ->first();
 
         if ($existingParticipant) {
-            throw ValidationException::withMessages([
-                'email' => 'Участник с этим email уже зарегистрирован на данный тип регистрации.',
-            ]);
+            return redirect()->back()->withErrors(['msg' => 'Участник с этим email уже зарегистрирован на данный тип регистрации.']);
         }
 
         // Перебираем все введенные пользователем данные

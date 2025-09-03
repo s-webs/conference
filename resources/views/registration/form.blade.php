@@ -17,24 +17,37 @@
     <section class="main-content">
         <div class="container-xl">
             <div class="row gy-4">
+                @if($errors->any())
+                    <h4 style="color: red">{{$errors->first()}}</h4>
+                @endif
+                @if (session('success'))
+                    <h4 style="color: green">{{ session('success') }}</h4>
+                @endif
                 <div class="col-lg-8">
-                    <form method="POST" action="{{ route('conference.store', [$conference->id, $form->id]) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('conference.store', [$conference->id, $form->id]) }}"
+                          enctype="multipart/form-data">
                         @csrf
                         @foreach($form->registrationFields as $field)
                             <div class="form-group">
                                 <label for="field-{{ $field->id }}">{{ $field->label }}</label>
                                 @if($field->type === 'text')
-                                    <input type="text" class="form-control" name="{{ $field->label }}" id="field-{{ $field->id }}" required>
+                                    <input type="text" class="form-control" name="{{ $field->label }}"
+                                           id="field-{{ $field->id }}" required>
                                 @elseif($field->type === 'number')
-                                    <input type="number" class="form-control" name="{{ $field->label }}" id="field-{{ $field->id }}" required>
+                                    <input type="number" class="form-control" name="{{ $field->label }}"
+                                           id="field-{{ $field->id }}" required>
                                 @elseif($field->type === 'email')
-                                    <input type="email" class="form-control" name="{{ $field->label }}" id="field-{{ $field->id }}" required>
+                                    <input type="email" class="form-control" name="{{ $field->label }}"
+                                           id="field-{{ $field->id }}" required>
                                 @elseif($field->type === 'textarea')
-                                    <textarea class="form-control" name="{{ $field->label }}" id="field-{{ $field->id }}" rows="4" required></textarea>
+                                    <textarea class="form-control" name="{{ $field->label }}"
+                                              id="field-{{ $field->id }}" rows="4" required></textarea>
                                 @elseif($field->type === 'file')
-                                    <br><input type="file" class="form-control-file" name="{{ $field->label }}" id="field-{{ $field->id }}" required>
+                                    <br><input type="file" class="form-control-file" name="{{ $field->label }}"
+                                               id="field-{{ $field->id }}" required>
                                 @elseif($field->type === 'select' && $field->options)
-                                    <select class="form-control" name="{{ $field->label }}" id="field-{{ $field->id }}" required>
+                                    <select class="form-control" name="{{ $field->label }}" id="field-{{ $field->id }}"
+                                            required>
                                         @foreach($field->options as $option)
                                             <option value="{{ $option }}">{{ $option }}</option>
                                         @endforeach
